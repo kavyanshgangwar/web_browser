@@ -1,7 +1,7 @@
 import pygame
 import sys
 from wbsettings import Settings
-
+import webfunctions as wf
 def web_browser():
     #initialize webbrowser and create screen object
     pygame.init()
@@ -15,8 +15,7 @@ def web_browser():
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
                 sys.exit()
-        #setting background color of screen
-        screen.fill(wb_settings.bg_color)
+        wf.draw_web(screen,wb_settings)
         #make the most recently drawn screen visible
         pygame.display.flip()
 
